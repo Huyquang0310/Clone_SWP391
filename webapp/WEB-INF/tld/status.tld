@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taglib xmlns="https://jakarta.ee/xml/ns/jakartaee"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-jsptaglibrary_3_0.xsd"
+        version="3.0">
+    <tlib-version>1.0</tlib-version>
+    <short-name>st</short-name>
+    <uri>http://swp391.g1/status</uri>
+    <function>
+        <name>label</name>
+        <function-class>com.swp391.g1.util.StatusUtil</function-class>
+        <function-signature>java.lang.String label(java.lang.Object)</function-signature>
+    </function>
+    <function>
+        <name>css</name>
+        <function-class>com.swp391.g1.util.StatusUtil</function-class>
+        <function-signature>java.lang.String css(java.lang.Object)</function-signature>
+    </function>
+</taglib>

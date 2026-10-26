@@ -1,0 +1,19 @@
+﻿/* Partner Company CSS - SWP391-G1 */
+@import "base.css";
+@import "activity.css";
+
+.partner-company-table {
+    min-width: 850px;
+}
+
+.partner-company-active {
+    border: 1px solid #d1ead9;
+    background: #edf8f0;
+    color: #287143;
+}
+
+.partner-company-inactive {
+    border: 1px solid #e4e7ed;
+    background: #f2f4f7;
+    color: #687386;
+}

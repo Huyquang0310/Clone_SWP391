@@ -1,0 +1,355 @@
+/* Base / Common CSS - SWP391-G1 */
+:root {
+    color-scheme: light;
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: #172033;
+    background: #f3f6fb;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.ui-icon {
+    width: 1em;
+    height: 1em;
+    flex: 0 0 auto;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    vertical-align: -.12em;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: #f3f6fb;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+button,
+input,
+select,
+textarea {
+    font-family: inherit;
+}
+
+a {
+    color: #2457c5;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.page {
+    width: min(1180px, calc(100% - 40px));
+    margin: 36px auto;
+}
+
+.page-header,
+.toolbar,
+.form-actions,
+.detail-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.page-header {
+    margin-bottom: 22px;
+}
+
+h1 {
+    margin: 0;
+    font-size: clamp(1.65rem, 3vw, 2.15rem);
+}
+
+.subtitle {
+    margin: 7px 0 0;
+    color: #64718a;
+}
+
+.card {
+    padding: 24px;
+    border: 1px solid #e2e8f2;
+    border-radius: 14px;
+    background: #fff;
+    box-shadow: 0 8px 24px rgb(28 45 80 / 5%);
+}
+
+.toolbar {
+    margin-bottom: 16px;
+}
+
+.button {
+    display: inline-flex;
+    min-height: 40px;
+    align-items: center;
+    justify-content: center;
+    padding: 9px 15px;
+    border: 1px solid #d4dceb;
+    border-radius: 8px;
+    background: #fff;
+    color: #24324a;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.button:hover {
+    background: #f5f7fb;
+    text-decoration: none;
+}
+
+.button-primary {
+    border-color: #2457c5;
+    background: #2457c5;
+    color: #fff;
+}
+
+.button-primary:hover {
+    background: #1948ad;
+}
+
+.button-sm {
+    min-height: 30px;
+    padding: 5px 11px;
+    font-size: .78rem;
+    font-weight: 600;
+    border-radius: 6px;
+
+}
+
+/*
+ * Nhóm nút theo ngữ nghĩa (dùng chung toàn hệ thống):
+ *   button-send-approval : slate đậm - gửi đi chờ xử lý
+ *   button-approve       : xanh lá    - đồng ý / chấp nhận
+ *   button-reject        : đỏ         - từ chối / ngừng
+ *   button-revoke        : xám        - hoàn tác (hủy duyệt, hủy từ chối, hủy lời mời)
+ */
+.button-revoke {
+    background-color: #E5E7EB;
+    color: #4B5563;
+    border: 1px solid #D1D5DB;
+}
+
+.button.button-revoke:hover {
+    background-color: #D1D5DB;
+    border-color: #9CA3AF;
+    color: #374151;
+}
+
+.button-reject {
+    background-color: #fef2f2;
+    color: #b91c1c;
+    border: 1px solid #fca5a5;
+}
+
+.button.button-reject:hover {
+    background-color: #fee2e2;
+    border-color: #f87171;
+    color: #991b1b;
+}
+
+.button-send-approval {
+    background-color: #1d4ed8;
+    color: #fff;
+    border: 1px solid #1d4ed8;
+}
+
+.button-send-approval:hover {
+    background-color: #1e40af;
+    border-color: #1e40af;
+    color: #fff;
+}
+
+.button-approve {
+    background-color: #15803d;
+    color: #fff;
+    border: 1px solid #15803d;
+}
+
+.button-approve:hover {
+    background-color: #166534;
+    border-color: #166534;
+    color: #fff;
+}
+
+
+
+.table-wrap {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    white-space: nowrap;
+}
+
+th,
+td {
+    padding: 13px 12px;
+    border-bottom: 1px solid #edf0f5;
+    text-align: left;
+}
+
+th {
+    color: #66728a;
+    font-size: .8rem;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+}
+
+tbody tr:hover {
+    background: #fafbfe;
+}
+
+.actions {
+    display: flex;
+    gap: 12px;
+}
+
+.alert {
+    margin: 0 0 16px;
+    padding: 12px 15px;
+    border-radius: 8px;
+}
+
+.alert-success {
+    background: #eaf7ef;
+    color: #21633a;
+}
+
+.alert-error {
+    background: #fff0f0;
+    color: #9b2626;
+}
+
+.empty-state {
+    padding: 38px 16px;
+    color: #66728a;
+    text-align: center;
+}
+
+.form-grid,
+.detail-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.field-wide {
+    grid-column: 1 / -1;
+}
+
+label {
+    color: #35425a;
+    font-size: .92rem;
+    font-weight: 600;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    min-height: 42px;
+    padding: 9px 11px;
+    border: 1px solid #d4dceb;
+    border-radius: 8px;
+    background: #fff;
+    color: #172033;
+    font: inherit;
+}
+
+textarea {
+    min-height: 110px;
+    resize: vertical;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #5880da;
+    outline: 3px solid rgb(36 87 197 / 12%);
+}
+
+.form-actions,
+.detail-actions {
+    justify-content: flex-start;
+    margin-top: 22px;
+}
+
+.detail-grid {
+    gap: 0;
+}
+
+.detail-item {
+    padding: 15px 0;
+    border-bottom: 1px solid #edf0f5;
+}
+
+.detail-item dt {
+    margin-bottom: 6px;
+    color: #66728a;
+    font-size: .82rem;
+    text-transform: uppercase;
+}
+
+.detail-item dd {
+    margin: 0;
+    overflow-wrap: anywhere;
+}
+
+.badge {
+    display: inline-block;
+    padding: 4px 9px;
+    border-radius: 999px;
+    background: #edf2ff;
+    color: #294ea3;
+    font-size: .82rem;
+    font-weight: 600;
+}
+
+.eyebrow {
+    display: inline-flex;
+    gap: 9px;
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: .14em;
+}
+
+@media (max-width: 680px) {
+    .page {
+        width: min(100% - 24px, 1180px);
+        margin: 20px auto;
+    }
+
+    .card {
+        padding: 17px;
+    }
+
+    .form-grid,
+    .detail-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .field-wide {
+        grid-column: auto;
+    }
+
+    .page-header {
+        align-items: flex-start;
+    }
+}

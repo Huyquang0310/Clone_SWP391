@@ -1,0 +1,5 @@
+# Copy this file to src/main/resources/ConnectDB.properties and replace the
+# values with your local SQL Server settings. Never commit real credentials.
+url=jdbc:sqlserver://YOUR_DB_HOST:1433;databaseName=YOUR_DB_NAME;encrypt=true;trustServerCertificate=true
+userID=YOUR_DB_USERNAME
+password=YOUR_DB_PASSWORD

@@ -1,0 +1,193 @@
+/* Shared visual language for Q&A and Inbox flows across STUDENT, STAFF and ADMIN. */
+.support-page {
+    --support-navy: #17385f;
+    --support-blue: #245b96;
+    --support-blue-dark: #183f70;
+    --support-blue-soft: #edf4fc;
+    --support-bg: #f3f6fb;
+    --support-surface: #fff;
+    --support-ink: #172b49;
+    --support-muted: #6b7c96;
+    --support-line: #dce5f0;
+    --support-success: #267449;
+    --support-warning: #956019;
+    min-height: 100dvh;
+    background: var(--support-bg) !important;
+    color: var(--support-ink) !important;
+    font-family: "Segoe UI", Arial, sans-serif !important;
+}
+
+.support-page *, .support-page *::before, .support-page *::after { box-sizing: border-box; }
+.support-page .ui-icon { width: 1em; height: 1em; flex: 0 0 auto; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; vertical-align: -.12em; }
+.support-page a:focus-visible, .support-page button:focus-visible, .support-page textarea:focus-visible, .support-page input:focus-visible {
+    outline: 3px solid rgb(64 126 194 / 28%) !important;
+    outline-offset: 3px;
+}
+
+/* Shared top navigation: same navy spectrum as the management template. */
+.qa-management-page .header,
+.answer-question-page .header,
+.organizer-inbox-page .header,
+.student-chat-page .header,
+.organizer-chat-page .header,
+.student-qa-page .topbar {
+    position: relative !important;
+    top: auto !important;
+    z-index: 2 !important;
+    width: min(1440px, calc(100% - 64px)) !important;
+    min-height: 76px !important;
+    height: auto !important;
+    margin: 24px auto 0 !important;
+    padding: 14px 24px !important;
+    border: 0 !important;
+    border-radius: 16px !important;
+    background: linear-gradient(115deg, #132b4f 0%, #1e477b 62%, #2862a2 100%) !important;
+    box-shadow: 0 14px 32px rgb(26 61 107 / 16%) !important;
+    color: white !important;
+}
+
+.support-page .logo, .support-page .brand { color: white !important; }
+.support-page .logo-icon, .support-page .brand-mark,
+.student-chat-page .avatar, .organizer-chat-page .student-avatar {
+    border-radius: 9px !important;
+    background: rgb(255 255 255 / 14%) !important;
+    color: white !important;
+}
+.support-page .nav-link, .student-qa-page .back-link { color: #dbe8f7 !important; }
+.support-page .nav-link:hover, .support-page .nav-link.active,
+.student-qa-page .back-link:hover { border-radius: 8px !important; background: rgb(255 255 255 / 13%) !important; color: white !important; }
+.answer-question-page .btn-back, .student-chat-page .btn-back, .organizer-chat-page .btn-back {
+    border-color: rgb(255 255 255 / 24%) !important;
+    background: rgb(255 255 255 / 10%) !important;
+    color: white !important;
+}
+.student-chat-page .contact-name, .organizer-chat-page .contact-name { color: white !important; }
+.student-chat-page .contact-sub, .organizer-chat-page .contact-sub { color: #c9d9ed !important; }
+.organizer-chat-page .student-info-pill { background: white !important; color: var(--support-navy) !important; }
+
+/* Shared content width and headings. */
+.qa-management-page .container,
+.answer-question-page .container,
+.organizer-inbox-page .container {
+    width: min(1180px, calc(100% - 40px)) !important;
+    max-width: 1180px !important;
+    margin: 0 auto !important;
+    padding: 38px 0 56px !important;
+}
+.support-page .page-title { background: none !important; color: var(--support-ink) !important; -webkit-text-fill-color: currentColor !important; letter-spacing: -.035em; }
+.support-page .page-subtitle { color: var(--support-muted) !important; }
+
+/* Q&A management. */
+.qa-management-page .stats-bar { gap: 14px !important; }
+.qa-management-page .stat-card {
+    border-color: var(--support-line) !important;
+    border-radius: 14px !important;
+    background: white !important;
+    box-shadow: 0 8px 24px rgb(28 55 94 / 5%);
+}
+.qa-management-page .stat-value, .qa-management-page .q-title { color: var(--support-ink) !important; }
+.qa-management-page .stat-label, .qa-management-page .q-content,
+.qa-management-page .q-author, .qa-management-page .q-date { color: var(--support-muted) !important; }
+.qa-management-page .stat-icon.total { background: #e9f1fb !important; }
+.qa-management-page .stat-icon.pending { background: #fff3df !important; }
+.qa-management-page .stat-icon.answered { background: #e9f6ee !important; }
+.qa-management-page .filter-tabs { border-color: var(--support-line) !important; background: white !important; }
+.qa-management-page .filter-tab { color: var(--support-muted) !important; }
+.qa-management-page .filter-tab.active, .qa-management-page .filter-tab:hover { background: var(--support-blue) !important; color: white !important; }
+.qa-management-page .question-card {
+    border-color: var(--support-line) !important;
+    border-radius: 14px !important;
+    background: white !important;
+    box-shadow: 0 7px 20px rgb(28 55 94 / 4%);
+}
+.qa-management-page .question-card:hover { border-color: #9ab9da !important; box-shadow: 0 13px 28px rgb(28 70 116 / 10%) !important; }
+.qa-management-page .question-card.pending::before { background: #d99522 !important; }
+.qa-management-page .question-card.answered::before { background: #2e8a57 !important; }
+.qa-management-page .empty-state { border-color: var(--support-line) !important; background: white !important; }
+
+/* Q&A detail and answer form. */
+.answer-question-page .question-section,
+.answer-question-page .answer-card,
+.answer-question-page .answer-form {
+    border-color: var(--support-line) !important;
+    border-radius: 14px !important;
+    background: white !important;
+    color: var(--support-ink) !important;
+    box-shadow: 0 8px 24px rgb(28 55 94 / 5%);
+}
+.answer-question-page .question-section::before { background: var(--support-blue) !important; }
+.answer-question-page .q-label { background: var(--support-blue-soft) !important; color: var(--support-blue) !important; }
+.answer-question-page .q-content, .answer-question-page .meta-item,
+.answer-question-page .answer-date, .answer-question-page .form-label,
+.answer-question-page .divider { color: var(--support-muted) !important; }
+.answer-question-page .divider::before, .answer-question-page .divider::after { background: var(--support-line) !important; }
+.answer-question-page .answer-content, .answer-question-page textarea {
+    border: 1px solid var(--support-line) !important;
+    background: #f7f9fc !important;
+    color: var(--support-ink) !important;
+}
+.answer-question-page .avatar { background: var(--support-blue-soft) !important; color: var(--support-blue) !important; }
+.answer-question-page .btn-submit { background: var(--support-blue) !important; }
+.answer-question-page .btn-draft { border-color: var(--support-line) !important; background: white !important; color: var(--support-ink) !important; }
+
+/* Organizer inbox list. */
+.organizer-inbox-page .unread-banner { border: 1px solid #cfe2f6 !important; background: #edf5fd !important; color: var(--support-blue-dark) !important; }
+.organizer-inbox-page .conv-card {
+    border-color: var(--support-line) !important;
+    border-radius: 14px !important;
+    background: white !important;
+    color: var(--support-ink) !important;
+    box-shadow: 0 7px 20px rgb(28 55 94 / 4%);
+}
+.organizer-inbox-page .conv-card:hover { border-color: #9ab9da !important; box-shadow: 0 13px 28px rgb(28 70 116 / 10%) !important; }
+.organizer-inbox-page .conv-card.unread { border-left-color: var(--support-blue) !important; background: #f7faff !important; }
+.organizer-inbox-page .conv-avatar { background: var(--support-blue-soft) !important; color: var(--support-blue) !important; }
+.organizer-inbox-page .conv-name { color: var(--support-ink) !important; }
+.organizer-inbox-page .conv-preview, .organizer-inbox-page .conv-time { color: var(--support-muted) !important; }
+.organizer-inbox-page .empty-state { border-color: var(--support-line) !important; background: white !important; }
+
+/* Both private chat screens. */
+.student-chat-page, .organizer-chat-page { display: block !important; }
+.student-chat-page .chat-wrapper, .organizer-chat-page .chat-wrapper {
+    width: min(980px, calc(100% - 40px)) !important;
+    max-width: 980px !important;
+    min-height: calc(100dvh - 132px) !important;
+    margin: 24px auto 0 !important;
+    overflow: hidden !important;
+    border: 1px solid var(--support-line);
+    border-radius: 16px 16px 0 0;
+    background: white;
+    box-shadow: 0 12px 30px rgb(28 55 94 / 7%);
+}
+.student-chat-page .messages-area, .organizer-chat-page .messages-area { min-height: 420px; padding: 28px !important; background: #f8fafd !important; }
+.student-chat-page .bubble.other, .organizer-chat-page .bubble.other { border: 1px solid var(--support-line) !important; background: white !important; color: var(--support-ink) !important; }
+.student-chat-page .bubble.me, .organizer-chat-page .bubble.me { background: var(--support-blue) !important; color: white !important; }
+.student-chat-page .input-area, .organizer-chat-page .input-area { border-color: var(--support-line) !important; background: white !important; }
+.student-chat-page textarea, .organizer-chat-page textarea { border-color: var(--support-line) !important; background: #f7f9fc !important; color: var(--support-ink) !important; }
+.student-chat-page .btn-send, .organizer-chat-page .btn-send { background: var(--support-blue) !important; box-shadow: none !important; }
+.student-chat-page .char-note, .organizer-chat-page .char-note, .student-chat-page .empty-chat, .organizer-chat-page .empty-chat { color: var(--support-muted) !important; }
+
+/* Student Q&A uses the same navy masthead and restrained blue accent. */
+.student-qa-page .qa-page { width: min(1180px, calc(100% - 40px)) !important; padding-top: 38px !important; }
+.student-qa-page .intro { padding: 30px 34px; border-radius: 16px; background: linear-gradient(115deg, #132b4f 0%, #1e477b 62%, #2862a2 100%); color: white; box-shadow: 0 14px 32px rgb(26 61 107 / 16%); }
+.student-qa-page .intro .eyebrow, .student-qa-page .intro-copy { color: #d3e0f1 !important; }
+.student-qa-page .intro h1 { font-size: clamp(2rem, 4vw, 3.4rem) !important; }
+.student-qa-page .student-chip { border-color: rgb(255 255 255 / 20%) !important; background: rgb(255 255 255 / 10%) !important; color: white; }
+.student-qa-page .student-chip small { color: #d3e0f1 !important; }
+.student-qa-page .question-form-panel, .student-qa-page .feed { border-color: var(--support-line) !important; box-shadow: 0 8px 24px rgb(28 55 94 / 5%) !important; }
+.student-qa-page .submit-button { background: var(--support-blue) !important; }
+.student-qa-page .answer { border-left-color: var(--support-blue) !important; background: #f2f6fc !important; }
+
+@media (max-width: 768px) {
+    .qa-management-page .header, .answer-question-page .header, .organizer-inbox-page .header,
+    .student-chat-page .header, .organizer-chat-page .header, .student-qa-page .topbar {
+        width: min(100% - 24px, 1440px) !important;
+        margin-top: 12px !important;
+        padding: 12px 16px !important;
+    }
+    .support-page .logo { font-size: .95rem !important; }
+    .qa-management-page .container, .answer-question-page .container, .organizer-inbox-page .container,
+    .student-qa-page .qa-page { width: min(100% - 24px, 1180px) !important; padding-top: 24px !important; }
+    .student-chat-page .chat-wrapper, .organizer-chat-page .chat-wrapper { width: min(100% - 24px, 980px) !important; }
+    .student-qa-page .intro { padding: 24px 20px; }
+}

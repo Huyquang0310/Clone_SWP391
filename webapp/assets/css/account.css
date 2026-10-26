@@ -1,0 +1,210 @@
+/* Account Management CSS - SWP391-G1 */
+@import "base.css";
+@import "activity.css?v=20261020-11";
+
+.account-page .account-hero-actions {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    gap: 10px;
+}
+
+.account-home-button {
+    border-color: rgb(255 255 255 / 35%);
+    background: rgb(255 255 255 / 10%);
+    color: #fff;
+}
+
+.account-home-button:hover {
+    background: rgb(255 255 255 / 18%);
+    color: #fff;
+}
+
+.account-filter-card {
+    margin-bottom: 20px;
+    padding: 0;
+    overflow: hidden;
+}
+
+.account-filter-card > .activity-table-heading {
+    padding: 21px 26px 17px;
+}
+
+.account-filters {
+    display: grid;
+    grid-template-columns: minmax(190px, 1.35fr) repeat(3, minmax(140px, 1fr)) auto;
+    align-items: end;
+    gap: 14px;
+    padding: 0 26px 22px;
+}
+
+.account-filters .field {
+    min-width: 0;
+}
+
+.account-filters input,
+.account-filters select {
+    min-height: 39px;
+    background: #fbfcfe;
+}
+
+.account-filter-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.account-filter-actions .button {
+    min-height: 39px;
+    padding: 8px 12px;
+    font-size: .84rem;
+    white-space: nowrap;
+}
+
+.account-table {
+    min-width: 760px;
+    white-space: normal;
+}
+
+.account-table th {
+    padding: 13px 15px;
+    background: #f7f9fc;
+    color: #687991;
+    font-size: .72rem;
+    letter-spacing: .065em;
+}
+
+.account-table td {
+    padding: 14px 15px;
+    color: #536177;
+    font-size: .88rem;
+}
+
+.account-table th:last-child,
+.account-table td:last-child {
+    width: 150px;
+    min-width: 150px;
+}
+
+.account-table .activity-actions {
+    justify-content: flex-start;
+}
+
+.account-table tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+.account-status {
+    font-size: .73rem;
+    font-weight: 700;
+    letter-spacing: .01em;
+    white-space: nowrap;
+}
+
+.account-status-ACTIVE {
+    border: 1px solid #d1ead9;
+    background: #edf8f0;
+    color: #287143;
+}
+
+.account-status-INACTIVE {
+    border: 1px solid #e4e7ed;
+    background: #f2f4f7;
+    color: #687386;
+}
+
+.account-status-BLOCKED {
+    border: 1px solid #f0d4d5;
+    background: #fff0f0;
+    color: #a33b43;
+}
+
+.account-form-grid {
+    max-width: 920px;
+}
+
+.account-hint {
+    color: #77849a;
+}
+
+.field-error {
+    color: #a33b43;
+    font-size: .81rem;
+    line-height: 1.4;
+}
+
+.account-detail-card {
+    padding: 0;
+    overflow: hidden;
+}
+
+.account-profile-grid + .account-profile-grid {
+    margin-top: 8px;
+    border-top: 1px solid #edf0f5;
+}
+
+.account-no-profile {
+    margin: 16px 0 8px;
+    color: #77849a;
+    font-size: .9rem;
+}
+
+.account-status-form {
+    display: flex;
+    max-width: 620px;
+    align-items: end;
+    gap: 12px;
+    margin-top: 17px;
+}
+
+.account-status-form .field {
+    flex: 1;
+}
+
+.account-status-form select {
+    min-height: 40px;
+    background: #fbfcfe;
+}
+
+.account-status-form .button {
+    flex-shrink: 0;
+}
+
+@media (max-width: 920px) {
+    .account-filters {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .account-filter-actions {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 760px) {
+    .account-page .account-hero-actions {
+        width: 100%;
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .account-filter-card > .activity-table-heading {
+        padding: 19px 18px;
+    }
+
+    .account-filters {
+        grid-template-columns: 1fr;
+        padding: 0 18px 18px;
+    }
+
+    .account-filter-actions {
+        grid-column: auto;
+    }
+}
+
+@media (max-width: 520px) {
+    .account-status-form {
+        align-items: stretch;
+        flex-direction: column;
+    }
+}

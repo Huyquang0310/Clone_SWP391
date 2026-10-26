@@ -1,0 +1,44 @@
+/* Partner Staff CSS - SWP391-G1 */
+@import "base.css";
+@import "activity.css";
+
+.partner-staff-table {
+    min-width: 920px;
+}
+
+.partner-staff-filter {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0 26px 18px;
+}
+
+.partner-staff-filter label {
+    color: #536782;
+    font-size: .86rem;
+    white-space: nowrap;
+}
+
+.partner-staff-filter select {
+    width: min(100%, 420px);
+    min-height: 38px;
+}
+
+.partner-staff-company-code {
+    display: block;
+    margin-top: 3px;
+    color: #8290a4;
+    font-size: .76rem;
+}
+
+@media (max-width: 760px) {
+    .partner-staff-filter {
+        align-items: stretch;
+        flex-direction: column;
+        padding: 0 18px 16px;
+    }
+
+    .partner-staff-filter select {
+        width: 100%;
+    }
+}

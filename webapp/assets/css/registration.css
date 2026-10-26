@@ -1,0 +1,824 @@
+.registration-page {
+    max-width: 1180px;
+    margin: 32px auto;
+    padding: 24px;
+    color: #202938
+}
+
+.registration-page.narrow {
+    max-width: 760px
+}
+
+.registration-page .page-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 24px
+}
+
+.registration-page h1 {
+    font-size: 28px;
+    margin: 0 0 10px
+}
+
+.registration-page p {
+    line-height: 1.6
+}
+
+.registration-page .muted {
+    color: #697586;
+    font-size: 13px;
+    margin-top: 6px
+}
+
+.registration-page .table-wrap {
+    overflow-x: auto;
+    background: #fff;
+    border: 1px solid #e4e7ec;
+    border-radius: 12px
+}
+
+.registration-page table {
+    border-collapse: collapse;
+    width: 100%;
+    min-width: 760px
+}
+
+.registration-page th,
+.registration-page td {
+    text-align: left;
+    padding: 14px 16px;
+    border-bottom: 1px solid #eaecf0;
+    vertical-align: top
+}
+
+.registration-page th {
+    background: #f8fafc;
+    font-size: 13px;
+    color: #475467
+}
+
+.registration-page td {
+    font-size: 14px
+}
+
+.registration-page .actions {
+    white-space: nowrap
+}
+
+.registration-page .actions form {
+    display: inline
+}
+
+.registration-page .actions a,
+.registration-page .actions button {
+    margin-right: 8px;
+    color: #175cd3;
+    background: none;
+    border: 0;
+    text-decoration: underline;
+    cursor: pointer;
+    font: inherit
+}
+
+.registration-page .btn {
+    display: inline-block;
+    padding: 10px 16px;
+    border: 1px solid #d0d5dd;
+    border-radius: 8px;
+    color: #344054;
+    text-decoration: none;
+    background: #fff;
+    cursor: pointer;
+    font: inherit
+}
+
+.registration-page .btn.primary {
+    background: #175cd3;
+    color: #fff;
+    border-color: #175cd3
+}
+
+.registration-page .registration-form {
+    display: grid;
+    gap: 18px;
+    margin-top: 22px
+}
+
+.registration-page .registration-form label {
+    display: grid;
+    gap: 7px;
+    font-weight: 600
+}
+
+.registration-page .registration-form input,
+.registration-page .registration-form select,
+.registration-page .registration-form textarea {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #d0d5dd;
+    border-radius: 8px;
+    padding: 11px 12px;
+    font: inherit;
+    background: #fff
+}
+
+.registration-page .registration-form textarea {
+    resize: vertical
+}
+
+.registration-page .form-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 6px
+}
+
+.registration-page .notice {
+    padding: 12px 14px;
+    border-radius: 8px;
+    background: #f2f4f7
+}
+
+.registration-page .notice.error {
+    background: #fef3f2;
+    color: #b42318
+}
+
+.registration-page .notice.success {
+    background: #ecfdf3;
+    color: #027a48
+}
+
+.registration-page .status {
+    display: inline-block;
+    background: #f2f4f7;
+    border-radius: 999px;
+    padding: 4px 9px;
+    font-size: 12px
+}
+
+.registration-page .status.open {
+    background: #ecfdf3;
+    color: #027a48
+}
+
+.registration-page .empty {
+    text-align: center;
+    color: #667085;
+    padding: 32px
+}
+
+.registration-page .back-link {
+    display: inline-block;
+    margin-top: 24px;
+    color: #175cd3
+}
+
+.registration-page .form-cards {
+    display: grid;
+    grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
+    gap: 18px;
+    margin-top: 24px
+}
+
+.registration-page .form-card {
+    border: 1px solid #e4e7ec;
+    border-radius: 12px;
+    padding: 20px;
+    background: #fff
+}
+
+.registration-page .form-card h2 {
+    font-size: 20px
+}
+
+.registration-page .form-card h3 {
+    font-size: 16px;
+    color: #475467
+}
+
+@media (max-width: 700px) {
+    .registration-page {
+        padding: 16px;
+        margin: 12px auto
+    }
+
+    .registration-page .page-heading {
+        align-items: flex-start;
+        flex-direction: column
+    }
+
+    .registration-page h1 {
+        font-size: 24px
+    }
+}
+
+.registration-management-page .registration-table-card {
+    padding: 0;
+    overflow: hidden;
+    font-family: "Segoe UI", "Noto Sans", Arial, sans-serif;
+    letter-spacing: 0;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+.registration-management-page .registration-table-wrap {
+    overflow-x: auto;
+    border-top: 1px solid #edf0f5;
+    scrollbar-color: #aebbd0 #f1f4f8;
+}
+
+.registration-table {
+    width: 100%;
+    min-width: 1220px;
+    table-layout: fixed;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.activity-list-page .activity-table-wrap table.registration-table {
+    width: 100%;
+    min-width: 1220px;
+}
+
+.registration-table th,
+.registration-table td {
+    box-sizing: border-box;
+    padding: 14px 16px;
+    border-bottom: 1px solid #edf0f5;
+    color: #536177;
+    font-size: .88rem;
+    line-height: 1.45;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.registration-table th {
+    background: #f7f9fc;
+    color: #687991;
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: .055em;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.registration-table th:nth-child(1) { width: 260px; }
+.registration-table th:nth-child(2) { width: 280px; }
+.registration-table th:nth-child(3) { width: 280px; }
+.registration-table th.registration-sticky-status { width: 130px; }
+.registration-table th.registration-sticky-count { width: 120px; }
+.registration-table th.registration-sticky-actions { width: 150px; }
+
+.registration-table td:nth-child(2) {
+    white-space: normal;
+}
+
+.registration-applications-table {
+    min-width: 945px;
+}
+
+.activity-list-page .activity-table-wrap table.registration-applications-table {
+    width: 100%;
+    min-width: 945px;
+}
+
+.registration-applications-table th:nth-child(1) { width: 280px; }
+.registration-applications-table th:nth-child(2) { width: 140px; }
+.registration-applications-table th:nth-child(3) { width: 250px; }
+.registration-applications-table th:nth-child(4) { width: 145px; }
+.registration-applications-table th:nth-child(5) { width: 130px; }
+
+.registration-applications-table th.registration-sticky-status,
+.registration-applications-table td.registration-sticky-status {
+    right: 130px;
+    width: 145px;
+    min-width: 145px;
+    max-width: 145px;
+}
+
+.registration-applications-table th.registration-sticky-actions,
+.registration-applications-table td.registration-sticky-actions {
+    right: 0;
+    width: 130px;
+    min-width: 130px;
+    max-width: 130px;
+    white-space: nowrap;
+}
+
+.registration-detail-tabs {
+    margin-top: 0;
+}
+
+.registration-detail-tab-content {
+    padding-top: 0;
+}
+
+.registration-detail-tab-content .registration-applications-tab {
+    padding-top: 20px;
+}
+
+.registration-applications-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.registration-applications-heading p {
+    margin: 5px 0 0;
+    color: #77849a;
+    font-size: .86rem;
+}
+
+.registration-review-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.registration-review-actions form {
+    margin: 0;
+}
+
+.registration-review-button {
+    min-width: 145px;
+    border: 1px solid transparent;
+    color: #fff;
+    font-weight: 650;
+    transition: background-color .15s ease, border-color .15s ease, box-shadow .15s ease;
+}
+
+.registration-review-button--approve {
+    background: #21804a;
+    border-color: #21804a;
+}
+
+.registration-review-button--approve:hover {
+    background: #176a3b;
+    border-color: #176a3b;
+}
+
+.registration-review-button--reject {
+    background: #b42318;
+    border-color: #b42318;
+}
+
+.registration-review-button--reject:hover {
+    background: #941b13;
+    border-color: #941b13;
+}
+
+.registration-review-button--undo-approval {
+    background: #eff6ff;
+    border-color: #bfdbfe;
+    color: #405777;
+}
+
+.registration-review-button--undo-approval:hover {
+    background: #dbeafe;
+    border-color: #93c5fd;
+    color: #2f4663;
+}
+
+.registration-review-button--undo-rejection {
+    background: #fff7ed;
+    border-color: #fed7aa;
+    color: #9a3412;
+}
+
+.registration-review-button--undo-rejection:hover {
+    background: #ffedd5;
+    border-color: #fdba74;
+    color: #7c2d12;
+}
+
+.registration-review-button:focus-visible {
+    outline: 3px solid rgb(45 102 177 / 30%);
+    outline-offset: 2px;
+}
+
+@media (max-width: 600px) {
+    .registration-review-actions {
+        width: 100%;
+    }
+
+    .registration-review-actions form {
+        flex: 1 1 0;
+    }
+
+    .registration-review-button {
+        width: 100%;
+        min-width: 0;
+    }
+}
+
+.registration-applications-table th,
+.registration-applications-table td {
+    padding-right: 12px;
+    padding-left: 12px;
+}
+
+.registration-applications-table th:first-child,
+.registration-applications-table td:first-child {
+    padding-left: 16px;
+}
+
+.registration-applications-table th:last-child,
+.registration-applications-table td:last-child {
+    padding-right: 16px;
+}
+
+.registration-applications-list-table {
+    min-width: 1105px;
+}
+
+.activity-list-page .activity-table-wrap table.registration-applications-list-table {
+    width: 100%;
+    min-width: 1105px;
+}
+
+.registration-applications-list-table th:nth-child(1) { width: 250px; }
+.registration-applications-list-table th:nth-child(2) { width: 130px; }
+.registration-applications-list-table th:nth-child(3) { width: 220px; }
+.registration-applications-list-table th:nth-child(4) { width: 230px; }
+.registration-applications-list-table th:nth-child(5) { width: 145px; }
+.registration-applications-list-table th:nth-child(6) { width: 130px; }
+
+.registration-applications-list-table th.registration-sticky-status,
+.registration-applications-list-table td.registration-sticky-status {
+    right: 130px;
+    width: 145px;
+    min-width: 145px;
+    max-width: 145px;
+}
+
+.registration-applications-list-table th.registration-sticky-actions,
+.registration-applications-list-table td.registration-sticky-actions {
+    right: 0;
+    width: 130px;
+    min-width: 130px;
+    max-width: 130px;
+    white-space: nowrap;
+}
+
+.registration-table tbody tr:hover td {
+    background-color: #f8faff;
+}
+
+.registration-table .registration-title-cell {
+    white-space: normal;
+}
+
+.activity-list-page .activity-table-wrap table.registration-table td.registration-time-cell {
+    white-space: normal;
+}
+
+.registration-time-cell span {
+    display: block;
+    overflow-wrap: anywhere;
+}
+
+.registration-time-cell span + span {
+    margin-top: 4px;
+}
+
+.registration-time-cell strong {
+    color: #405777;
+    font-weight: 650;
+}
+
+.registration-title-cell strong {
+    display: block;
+    color: #233752;
+    overflow-wrap: anywhere;
+}
+
+.registration-title-cell .muted {
+    display: -webkit-box;
+    overflow: hidden;
+    margin-top: 5px;
+    color: #77849a;
+    font-size: .82rem;
+    line-height: 1.45;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow-wrap: anywhere;
+}
+
+.registration-table .registration-sticky-status,
+.registration-table .registration-sticky-count,
+.registration-table .registration-sticky-actions {
+    position: sticky;
+    z-index: 2;
+    background: #fff;
+}
+
+.registration-table .registration-sticky-status {
+    right: 270px;
+    width: 130px;
+    min-width: 130px;
+    max-width: 130px;
+}
+
+.registration-table .registration-sticky-count {
+    right: 150px;
+    width: 120px;
+    min-width: 120px;
+    max-width: 120px;
+    text-align: center;
+}
+
+.registration-table .registration-sticky-actions {
+    right: 0;
+    width: 150px;
+    min-width: 150px;
+    max-width: 150px;
+    white-space: nowrap;
+}
+
+.registration-table thead .registration-sticky-status,
+.registration-table thead .registration-sticky-count,
+.registration-table thead .registration-sticky-actions {
+    z-index: 3;
+    background: #f7f9fc;
+}
+
+.registration-table tbody tr:hover .registration-sticky-status,
+.registration-table tbody tr:hover .registration-sticky-count,
+.registration-table tbody tr:hover .registration-sticky-actions {
+    background: #f8faff;
+}
+
+.registration-table .registration-sticky-status .badge {
+    display: inline-flex;
+    justify-content: center;
+    white-space: nowrap;
+}
+
+.registration-table .registration-sticky-status .status-yellow {
+    color: #8a6100;
+}
+
+.registration-count {
+    display: inline-flex;
+    min-width: 32px;
+    min-height: 30px;
+    align-items: center;
+    justify-content: center;
+    padding: 0 8px;
+    border: 1px solid #e1e8f2;
+    border-radius: 999px;
+    background: #f5f8fc;
+    color: #344963;
+    font-weight: 700;
+}
+
+.registration-row-actions {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.registration-row-actions .action-btn--edit {
+    color: #2563eb;
+}
+
+.registration-row-actions .action-btn--edit:hover {
+    background: #eff6ff;
+    color: #1d4ed8;
+    text-decoration: none;
+}
+
+.registration-empty-state {
+    height: 230px;
+}
+
+.registration-empty-state .button {
+    margin-top: 8px;
+}
+
+.registration-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+    gap: 18px;
+    margin-top: 22px;
+}
+
+.student-registration-card {
+    display: flex;
+    min-height: 270px;
+    flex-direction: column;
+    padding: 24px;
+    border: 1px solid #e3eaf3;
+    border-radius: 14px;
+    background: #fff;
+    box-shadow: 0 4px 14px rgb(31 56 88 / 5%);
+}
+
+.student-registration-card-top {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.student-registration-card h2 {
+    margin: 16px 0 8px;
+    color: #172b49;
+    font-size: 1.18rem;
+    line-height: 1.4;
+}
+
+.student-registration-card h3 {
+    margin: 0 0 12px;
+    color: #52647d;
+    font-size: .95rem;
+    font-weight: 600;
+}
+
+.student-registration-description {
+    display: -webkit-box;
+    overflow: hidden;
+    margin: 0;
+    color: #687991;
+    line-height: 1.55;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+}
+
+.student-registration-deadline {
+    margin: 16px 0;
+    color: #65758d;
+    font-size: .84rem;
+}
+
+.student-registration-cta {
+    align-self: flex-start;
+    margin-top: auto;
+    text-decoration: none;
+}
+
+.student-registration-cta:hover {
+    text-decoration: none;
+}
+
+.student-registration-empty {
+    display: flex;
+    min-height: 270px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 22px;
+    padding: 32px;
+    text-align: center;
+}
+
+.student-registration-empty .empty-state-mark {
+    margin-bottom: 10px;
+}
+
+.student-registration-empty h2 {
+    margin: 0;
+    color: #233752;
+    font-size: 1.2rem;
+}
+
+.student-registration-empty p {
+    max-width: 560px;
+    margin: 10px 0 0;
+    color: #687991;
+    line-height: 1.6;
+}
+
+.student-registration-detail {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.registration-detail-card {
+    overflow: hidden;
+}
+
+.registration-detail-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.registration-detail-card .activity-detail-content {
+    padding: 8px 30px 28px;
+}
+
+.registration-detail-card .activity-detail-section {
+    padding: 0;
+}
+
+.registration-detail-card .activity-detail-description {
+    white-space: pre-line;
+}
+
+.student-registration-detail .activity-table-heading {
+    align-items: center;
+}
+
+.student-registration-detail .activity-table-heading .badge {
+    flex-shrink: 0;
+}
+
+.student-registration-activity-name {
+    margin: 0 0 10px;
+    color: #344963;
+    font-size: 1.05rem;
+}
+
+.student-registration-detail-description {
+    margin: 0 0 24px;
+    color: #687991;
+    line-height: 1.65;
+    white-space: pre-line;
+}
+
+.student-registration-actions {
+    margin: 22px -30px -28px;
+}
+
+.registration-optional {
+    color: #77849a;
+    font-size: .82rem;
+    font-weight: 400;
+}
+
+@media (max-width: 700px) {
+    .activity-list-page .activity-table-wrap table.registration-table {
+        width: 100%;
+        min-width: 1220px;
+    }
+
+    .registration-management-page .registration-table:not(.registration-applications-table):not(.registration-applications-list-table) th.registration-sticky-status,
+    .registration-management-page .registration-table:not(.registration-applications-table):not(.registration-applications-list-table) td.registration-sticky-status {
+        right: 218px;
+        width: 112px;
+        min-width: 112px;
+        max-width: 112px;
+    }
+
+    .registration-management-page .registration-table:not(.registration-applications-table):not(.registration-applications-list-table) th.registration-sticky-count,
+    .registration-management-page .registration-table:not(.registration-applications-table):not(.registration-applications-list-table) td.registration-sticky-count {
+        right: 112px;
+        width: 106px;
+        min-width: 106px;
+        max-width: 106px;
+    }
+
+    .registration-management-page .registration-table:not(.registration-applications-table):not(.registration-applications-list-table) th.registration-sticky-actions,
+    .registration-management-page .registration-table:not(.registration-applications-table):not(.registration-applications-list-table) td.registration-sticky-actions {
+        width: 112px;
+        min-width: 112px;
+        max-width: 112px;
+    }
+
+    .registration-applications-table th.registration-sticky-status,
+    .registration-applications-table td.registration-sticky-status,
+    .registration-applications-list-table th.registration-sticky-status,
+    .registration-applications-list-table td.registration-sticky-status {
+        right: 112px;
+        width: 124px;
+        min-width: 124px;
+        max-width: 124px;
+    }
+
+    .registration-applications-table th.registration-sticky-actions,
+    .registration-applications-table td.registration-sticky-actions,
+    .registration-applications-list-table th.registration-sticky-actions,
+    .registration-applications-list-table td.registration-sticky-actions {
+        width: 112px;
+        min-width: 112px;
+        max-width: 112px;
+    }
+
+    .registration-row-actions {
+        gap: 4px;
+    }
+
+    .registration-row-actions .button {
+        padding: 5px 7px;
+    }
+
+    .student-registration-card {
+        min-height: 0;
+    }
+
+    .student-registration-actions {
+        margin: 18px -18px -18px;
+        padding: 16px 18px;
+    }
+
+    .activity-list-page .activity-table-wrap table.registration-applications-table {
+        min-width: 945px;
+    }
+
+    .activity-list-page .activity-table-wrap table.registration-applications-list-table {
+        min-width: 1105px;
+    }
+}

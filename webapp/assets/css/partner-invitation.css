@@ -1,0 +1,109 @@
+/* Partner Invitation CSS - SWP391-G1 */
+@import "base.css";
+@import "activity.css?v=20261020-11";
+
+/* Partner invitation list: frozen right-hand columns */
+.partner-invitation-table {
+    --freeze-status-width: 180px;
+    --freeze-actions-width: 150px;
+    min-width: 1100px;
+    width: 100%;
+}
+.activity-list-page .activity-table-wrap table.partner-invitation-table .freeze {
+    max-width: none;
+    position: sticky;
+    background: #fff;
+    z-index: 2;
+    white-space: nowrap;
+}
+.activity-list-page .activity-table-wrap table.partner-invitation-table th.freeze {
+    max-width: none;
+    position: sticky;
+    background: #f7f9fc;
+    z-index: 3;
+    white-space: nowrap;
+}
+.activity-list-page .activity-table-wrap table.partner-invitation-table .freeze-message {
+    right: calc(var(--freeze-status-width, 0px) + var(--freeze-actions-width, 0px));
+    box-shadow: -6px 0 8px -6px rgba(15, 23, 42, .18);
+}
+.activity-list-page .activity-table-wrap table.partner-invitation-table .freeze-status {
+    right: var(--freeze-actions-width, 0px);
+}
+.activity-list-page .activity-table-wrap table.partner-invitation-table .freeze-actions {
+    right: 0;
+}
+.activity-list-page .activity-table-wrap table.partner-invitation-table .col-wrap {
+    width: 120px;
+    min-width: 120px;
+    white-space: normal;
+}
+.activity-list-page .activity-table-wrap table.partner-invitation-table .activity-run-status {
+    width: 160px;
+    min-width: 160px;
+    max-width: 160px;
+    white-space: normal;
+}
+.activity-list-page .activity-table-wrap table.partner-invitation-table .invitation-status-column {
+    width: 140px;
+    min-width: 120px;
+    max-width: 160px;
+    white-space: normal;
+}
+.activity-list-page .activity-table-wrap table.partner-invitation-table th.invitation-status-column {
+    white-space: normal;
+}
+.partner-invitation-table .activity-run-status .badge {
+    display: inline-block;
+    white-space: nowrap;
+}
+.partner-invitation-table .col-wrap .badge {
+    display: inline-block;
+    white-space: normal;
+    text-align: center;
+    line-height: 1.3;
+}
+.partner-invitation-table td.invitation-status-column .badge {
+    display: inline-block;
+    white-space: nowrap;
+}
+.partner-invitation-table .activity-actions {
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    gap: 8px;
+}
+
+@media (max-width: 760px) {
+    .activity-list-page .activity-table-wrap table.partner-invitation-table .freeze,
+    .activity-list-page .activity-table-wrap table.partner-invitation-table th.freeze {
+        position: static;
+        right: auto;
+        box-shadow: none;
+    }
+
+    .activity-list-page .activity-table-wrap table.partner-invitation-table .activity-run-status {
+        width: 160px;
+        min-width: 160px;
+        max-width: 160px;
+    }
+
+    .activity-list-page .activity-table-wrap table.partner-invitation-table .invitation-status-column {
+        width: 120px;
+        min-width: 120px;
+        max-width: 120px;
+        white-space: normal;
+    }
+}
+
+.invitation-message-modal {
+    max-width: 520px;
+    width: 90%;
+    border: 1px solid #d0d5dd;
+    border-radius: 8px;
+    padding: 1.25rem;
+}
+.invitation-message-modal::backdrop {
+    background: rgba(0, 0, 0, .4);
+}

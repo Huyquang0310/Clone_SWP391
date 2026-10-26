@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+  <!-- Definitions for text curve -->
+  <defs>
+    <!-- Vòng cung để chữ uốn cong theo -->
+    <path id="text-arc" d="M 80 110 A 130 130 0 0 1 320 110" fill="transparent" />
+  </defs>
+
+  <!-- Typography: Chữ uốn cong (Màu trắng để nổi trên nền tối) -->
+  <text font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="42" font-weight="900" fill="#ffffff" letter-spacing="5">
+    <textPath href="#text-arc" startOffset="50%" text-anchor="middle">UNIVERSITY</textPath>
+  </text>
+
+  <!-- Shield Background (Bỏ màu nền, chỉ để viền) -->
+  <!-- Khác với bản gốc, bản này không có thẻ path nền khiên để lộ màu nền xanh của website -->
+  
+  <!-- Shield Border / Outline (Giữ màu vàng nhưng có thể làm sáng hơn một chút để nổi) -->
+  <path d="M 200 126 C 290 126 318 150 318 220 C 318 312 200 373 200 373 C 200 373 82 312 82 220 C 82 150 110 126 200 126 Z" fill="none" stroke="#fceabb" stroke-width="5" />
+
+  <!-- Icon: Sách mở (Open Book) - Màu trắng -->
+  <g stroke="#ffffff" fill="none" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M 160 160 C 180 160 190 168 200 175 C 210 168 220 160 240 160 L 240 195 C 220 195 210 203 200 210 C 190 203 180 195 160 195 Z" />
+    <line x1="200" y1="175" x2="200" y2="210" />
+  </g>
+
+  <!-- Icon: Tòa nhà cổ điển (Classic Building) - Màu trắng hoặc vàng sáng -->
+  <g fill="#ffffff">
+    <!-- Mái nhà (Roof) -->
+    <polygon points="200,230 140,255 260,255" />
+    <!-- Bậc thềm trên (Top Base) -->
+    <rect x="145" y="255" width="110" height="6" />
+    <!-- Cột trụ (Pillars) -->
+    <rect x="155" y="261" width="12" height="45" />
+    <rect x="194" y="261" width="12" height="45" />
+    <rect x="233" y="261" width="12" height="45" />
+    <!-- Bậc thềm dưới (Bottom Base) -->
+    <rect x="140" y="306" width="120" height="6" />
+    <rect x="130" y="312" width="140" height="6" />
+  </g>
+
+  <!-- Icon: Cành nguyệt quế / Cành lá (Olive Branch) - Màu vàng sáng -->
+  <g fill="#fceabb">
+    <!-- Nhánh chính -->
+    <path d="M 150 340 Q 200 370 250 330" fill="none" stroke="#fceabb" stroke-width="3" stroke-linecap="round"/>
+    <!-- Các lá -->
+    <path d="M 165 352 Q 175 338 185 355 Q 170 365 165 352 Z" />
+    <path d="M 195 362 Q 205 348 215 363 Q 200 375 195 362 Z" />
+    <path d="M 225 355 Q 235 342 245 350 Q 235 365 225 355 Z" />
+    <path d="M 150 340 Q 165 325 170 340 Q 155 355 150 340 Z" />
+    <path d="M 250 330 Q 240 315 230 325 Q 245 340 250 330 Z" />
+  </g>
+</svg>

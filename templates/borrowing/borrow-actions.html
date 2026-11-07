@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<!--
+  Nút "Mượn sách" để nhúng vào trang chi tiết sách (UC8, do Gia Huy làm).
+  Dùng: <div th:replace="~{borrowing/borrow-actions :: actions(${book.id})}"></div>
+  Khách thấy nút đăng nhập; độc giả thấy nút mở trang xác nhận mượn / đặt trước; thủ thư và admin không thấy gì.
+-->
+<div th:fragment="actions(bookId)">
+    <a th:if="${currentUser == null}" class="btn btn-outline-primary" th:href="@{/login}">
+        <i class="bi bi-box-arrow-in-right"></i> Đăng nhập để mượn sách
+    </a>
+    <a th:if="${currentUser != null and currentUser.reader}" class="btn btn-primary"
+       th:href="@{/reader/loans/new(bookId=${bookId})}">
+        <i class="bi bi-bookmark-plus"></i> Mượn / đặt trước
+    </a>
+</div>
+</body>
+</html>

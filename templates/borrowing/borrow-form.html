@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/layout :: head('Mượn sách')}"></head>
+<body>
+<div th:replace="~{fragments/layout :: navbar}"></div>
+
+<!-- UC11 Gửi yêu cầu mượn / UC13 Đặt trước. Trang này nhận bookId, hiện thông tin sách và nút phù hợp. -->
+<div class="container my-4" style="max-width: 820px;">
+    <div class="panel page-spacer">
+        <div th:replace="~{fragments/layout :: alerts}"></div>
+
+        <div class="row g-4">
+            <div class="col-12 col-md-4">
+                <img th:if="${info.coverUrl != null}" class="book-cover rounded" th:src="@{${info.coverUrl}}" alt="Ảnh bìa">
+                <div th:if="${info.coverUrl == null}" class="book-cover book-cover-empty rounded">Chưa có ảnh bìa</div>
+            </div>
+            <div class="col-12 col-md-8">
+                <h1 class="h4" th:text="${info.title}">Tên sách</h1>
+                <div class="text-muted" th:text="${info.authorNames}">Tác giả</div>
+                <div class="my-2">
+                    <span class="badge bg-secondary" th:if="${info.categoryName != null}" th:text="${info.categoryName}">Thể loại</span>
+                    <span class="small text-muted ms-1">ISBN: <span th:text="${info.isbn}"></span></span>
+                </div>
+
+                <p class="mb-3">
+                    <span class="badge bg-success" th:if="${info.availableCopies > 0}">
+                        Còn <span th:text="${info.availableCopies}">1</span> bản
+                    </span>
+                    <span class="badge bg-danger" th:if="${info.availableCopies == 0}">Hết bản</span>
+                </p>
+
+                <!-- Đã có yêu cầu / phiếu đang hiệu lực cho cuốn này -->
+                <div class="alert alert-info" th:if="${info.activeLoanStatus != null}">
+                    Bạn đã có yêu cầu hoặc phiếu mượn cuốn này (trạng thái:
+                    <strong th:text="${info.activeLoanStatus.label}">Chờ duyệt</strong>).
+                    <a th:href="@{/reader/loans}">Xem lịch sử mượn trả</a>
+                </div>
+
+                <!-- Còn bản: gửi yêu cầu mượn (UC11) -->
+                <th:block th:if="${info.activeLoanStatus == null and info.availableCopies > 0}">
+                    <form th:action="@{/reader/loans/request}" method="post">
+                        <input type="hidden" name="bookId" th:value="${info.id}">
+                        <button class="btn btn-primary" type="submit"><i class="bi bi-send"></i> Gửi yêu cầu mượn</button>
+                    </form>
+                    <p class="small text-muted mt-2 mb-0">
+                        Thủ thư sẽ duyệt yêu cầu; sau khi được duyệt, bạn đến quầy nhận sách trong thời hạn giữ sách.
+                    </p>
+                </th:block>
+
+                <!-- Hết bản: đặt trước (UC13) -->
+                <th:block th:if="${info.activeLoanStatus == null and info.availableCopies == 0}">
+                    <div class="alert alert-info" th:if="${info.reserved}">
+                        Bạn đã đặt trước cuốn này. Thủ thư sẽ liên hệ khi có sách.
+                        <a th:href="@{/reader/reservations}">Xem đặt trước của tôi</a>
+                    </div>
+                    <form th:if="${!info.reserved}" th:action="@{/reader/reservations}" method="post">
+                        <input type="hidden" name="bookId" th:value="${info.id}">
+                        <button class="btn btn-warning" type="submit"><i class="bi bi-bookmark-plus"></i> Đặt trước</button>
+                    </form>
+                    <p class="small text-muted mt-2 mb-0" th:if="${!info.reserved}">
+                        Đặt trước chỉ ghi nhận nhu cầu, thủ thư sẽ tự liên hệ khi sách có lại.
+                    </p>
+                </th:block>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div th:replace="~{fragments/layout :: footer}"></div>
+</body>
+</html>

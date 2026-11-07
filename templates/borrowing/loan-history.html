@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/layout :: head('Lịch sử mượn trả')}"></head>
+<body>
+<div th:replace="~{fragments/layout :: navbar}"></div>
+
+<!-- UC12 Lịch sử mượn trả, UC14 Gia hạn -->
+<div class="container my-4">
+    <div class="panel page-spacer">
+        <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
+            <h1 class="h4 mb-0">Lịch sử mượn trả</h1>
+            <form th:action="@{/reader/loans}" method="get" class="d-flex gap-2">
+                <select class="form-select" name="status" aria-label="Lọc theo trạng thái" onchange="this.form.submit()">
+                    <option value="">Tất cả trạng thái</option>
+                    <option th:each="s : ${statuses}" th:value="${s.name()}" th:text="${s.label}"
+                            th:selected="${s.name() == status}">Trạng thái</option>
+                </select>
+                <noscript><button class="btn btn-outline-secondary" type="submit">Lọc</button></noscript>
+            </form>
+        </div>
+
+        <div th:replace="~{fragments/layout :: alerts}"></div>
+
+        <div class="alert alert-info" th:if="${loans.isEmpty()}">Chưa có phiếu mượn nào.</div>
+
+        <div class="table-responsive" th:if="${!loans.isEmpty()}">
+            <table class="table align-middle">
+                <thead>
+                <tr>
+                    <th>Sách</th>
+                    <th>Ngày gửi</th>
+                    <th>Trạng thái</th>
+                    <th>Hạn trả / Ngày trả</th>
+                    <th>Phạt</th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="l : ${loans}">
+                    <td>
+                        <a class="text-decoration-none fw-semibold" th:href="@{/books/{id}(id=${l.bookId})}"
+                           th:text="${l.bookTitle}">Tên sách</a>
+                    </td>
+                    <td th:text="${#temporals.format(l.requestedAt, 'dd/MM/yyyy HH:mm')}">01/01/2026</td>
+                    <td>
+                        <span class="badge" th:classappend="${l.status.badgeClass}" th:text="${l.status.label}">Trạng thái</span>
+                        <div class="small text-muted mt-1" th:if="${l.status.name() == 'REJECTED' and l.rejectReason != null}">
+                            Lý do: <span th:text="${l.rejectReason}"></span>
+                        </div>
+                        <div class="small text-muted mt-1" th:if="${l.status.name() == 'APPROVED' and l.pickupDeadline != null}">
+                            Nhận sách trước <span th:text="${#temporals.format(l.pickupDeadline, 'dd/MM/yyyy HH:mm')}"></span>
+                        </div>
+                    </td>
+                    <td>
+                        <div th:if="${l.dueDate != null}">
+                            Hạn trả: <span th:text="${#temporals.format(l.dueDate, 'dd/MM/yyyy')}"></span>
+                            <div class="small text-muted"
+                                 th:if="${l.status.name() == 'BORROWED' or l.status.name() == 'OVERDUE'}">
+                                Đã gia hạn <span th:text="${l.renewCount}">0</span>/<span th:text="${l.maxRenewals}">2</span> lần
+                            </div>
+                        </div>
+                        <div th:if="${l.returnedAt != null}">
+                            Đã trả: <span th:text="${#temporals.format(l.returnedAt, 'dd/MM/yyyy')}"></span>
+                        </div>
+                        <span th:if="${l.dueDate == null and l.returnedAt == null}" class="text-muted">-</span>
+                    </td>
+                    <td>
+                        <th:block th:if="${l.fineAmount != null}">
+                            <span th:classappend="${l.fineUnpaid} ? 'text-danger fw-semibold' : 'text-success'">
+                                <span th:text="${#numbers.formatDecimal(l.fineAmount, 0, 'POINT', 0, 'COMMA')}">0</span> đ
+                            </span>
+                            <div class="small text-muted" th:if="${l.fineEstimated}">Ước tính đến hôm nay</div>
+                            <div class="small text-muted" th:if="${!l.fineEstimated and l.fineUnpaid}">Chưa thanh toán</div>
+                            <div class="small text-muted" th:if="${!l.fineEstimated and !l.fineUnpaid}">Đã xử lý</div>
+                        </th:block>
+                        <span th:if="${l.fineAmount == null}" class="text-muted">-</span>
+                    </td>
+                    <td class="text-end">
+                        <form th:if="${l.canRenew}" th:action="@{/reader/loans/{id}/renew(id=${l.id})}" method="post" class="d-inline">
+                            <button class="btn btn-sm btn-outline-primary" type="submit">
+                                <i class="bi bi-arrow-repeat"></i> Gia hạn
+                            </button>
+                        </form>
+                        <form th:if="${l.canCancel}" th:action="@{/reader/loans/{id}/cancel(id=${l.id})}" method="post" class="d-inline"
+                              onsubmit="return confirm('Hủy yêu cầu mượn này?');">
+                            <button class="btn btn-sm btn-outline-danger" type="submit">Hủy yêu cầu</button>
+                        </form>
+                        <span class="small text-muted" th:if="${l.renewNote != null}" th:text="${l.renewNote}">Lý do</span>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <nav th:replace="~{fragments/layout :: pagination(${result}, @{/reader/loans(status=${status})})}"></nav>
+    </div>
+</div>
+
+<div th:replace="~{fragments/layout :: footer}"></div>
+</body>
+</html>

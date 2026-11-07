@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/layout :: head('Sách đặt trước')}"></head>
+<body>
+<div th:replace="~{fragments/layout :: navbar}"></div>
+
+<!-- UC13 Đặt trước sách đang hết -->
+<div class="container my-4">
+    <div class="panel page-spacer">
+        <h1 class="h4 mb-3">Sách đặt trước</h1>
+
+        <div th:replace="~{fragments/layout :: alerts}"></div>
+
+        <div class="alert alert-info" th:if="${reservations.isEmpty()}">
+            Bạn chưa đặt trước cuốn nào. Khi một cuốn sách hết bản, trang mượn sách sẽ có nút "Đặt trước".
+            <a th:href="@{/books}">Xem danh mục sách</a>
+        </div>
+
+        <div class="table-responsive" th:if="${!reservations.isEmpty()}">
+            <table class="table align-middle">
+                <thead>
+                <tr><th>Sách</th><th>Ngày đặt</th><th>Trạng thái</th><th></th></tr>
+                </thead>
+                <tbody>
+                <tr th:each="r : ${reservations}">
+                    <td>
+                        <a class="text-decoration-none fw-semibold" th:href="@{/books/{id}(id=${r.book.id})}"
+                           th:text="${r.book.title}">Tên sách</a>
+                    </td>
+                    <td th:text="${#temporals.format(r.createdAt, 'dd/MM/yyyy HH:mm')}">01/01/2026</td>
+                    <td>
+                        <span class="badge" th:classappend="${r.status.badgeClass}" th:text="${r.status.label}">Trạng thái</span>
+                        <div class="small text-muted mt-1" th:if="${r.status.name() == 'READY' and r.holdUntil != null}">
+                            Giữ sách đến <span th:text="${#temporals.format(r.holdUntil, 'dd/MM/yyyy HH:mm')}"></span>
+                        </div>
+                    </td>
+                    <td class="text-end">
+                        <form th:if="${r.status.name() == 'WAITING' or r.status.name() == 'READY'}"
+                              th:action="@{/reader/reservations/{id}/cancel(id=${r.id})}" method="post"
+                              onsubmit="return confirm('Hủy đặt trước này?');">
+                            <button class="btn btn-sm btn-outline-danger" type="submit">Hủy đặt trước</button>
+                        </form>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <nav th:replace="~{fragments/layout :: pagination(${result}, @{/reader/reservations})}"></nav>
+    </div>
+</div>
+
+<div th:replace="~{fragments/layout :: footer}"></div>
+</body>
+</html>
